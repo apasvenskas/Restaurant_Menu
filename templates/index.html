@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
-    </head>
-    <body>
-        <h1>Restaurant Menu</h1>
-        <h3>
-            {{ meals }}
-            {{ ingredients }}
-        </h3>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <h1>Restaurant Menu</h1>
+    {% for meal in meals %}
+    <h3>{{ meal.1 }}</h3>
+        {% for m in item_list %} 
+            {% if m.meal_type == meal.0 %}
+                {% if m.status == 0 %}
+                    <h4><del>{{ m.meal }}</del></h4>
+                    <p>{{ m.price }}</p>
+                    <p>{{ m.description }}</p>
+                {% else %}
+                    <h4>{{ m.meal }}</h4>
+                    <p>{{ m.price }}</p>
+                    <p>{{ m.description }}</p>
+                {% endif %}
+            {% endif %} 
+        {% endfor %} 
+    {% endfor %}
+  </body>
 </html>
