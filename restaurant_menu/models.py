@@ -9,8 +9,8 @@ MEAL_TYPE = (
 )
 
 STATUS = (
-    ("0", "unavailable"),
-    ("1", "available")
+    (0, "unavailable"),
+    (1, "available")
 )
 
 class Item(models.Model):
