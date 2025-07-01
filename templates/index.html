@@ -15,7 +15,7 @@
                     <p>{{ m.price }}</p>
                     <p>{{ m.description }}</p>
                 {% else %}
-                    <h4>{{ m.meal }}</h4>
+                    <a href="{% url 'menu_item' m.pk %}"><h4>{{ m.meal }}</h4></a>
                     <p>{{ m.price }}</p>
                     <p>{{ m.description }}</p>
                 {% endif %}
